@@ -1,0 +1,38 @@
+{
+  "name": "vehic-update",
+  "version": "1.0.0",
+  "description": "TypeScript/JavaScript client for vehicle update proto",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "clean": "rm -rf dist",
+    "build:proto": "protoc --ts_out ./src --proto_path . vehicle_update.proto",
+    "build:ts": "tsc",
+    "build": "npm run clean && npm run build:proto && npm run build:ts",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "proto",
+    "vehicle",
+    "typescript"
+  ],
+  "author": "ebrugulec",
+  "license": "ISC",
+  "devDependencies": {
+    "@bufbuild/protobuf": "^2.5.2",
+    "@connectrpc/connect": "^2.0.2",
+    "@connectrpc/connect-web": "^2.0.2",
+    "ts-proto": "^1.181.2",
+    "typescript": "^5.8.3"
+  },
+  "peerDependencies": {
+    "@bufbuild/protobuf": "^2.5.2"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

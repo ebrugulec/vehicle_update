@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package schema;
+
+message VehicleUpdate {
+  int64 event_timestamp_posix = 1; // describing the exact timestamp a given event was triggered
+  string event_name = 2; // describing the event name
+  string license_plate = 3; // unique identifier for vehicle
+  string supplier_name = 4; // describing the supplier name of the vehicle
+  string hub_slug = 5; // describing the hub slug where the vehicle is used
+  string vehicle_id = 6; // describing the unique identifier for vehicle
+  string operational_status = 7; // describing the current status of the vehicle
+}
+
+enum OperationalStatus {
+  // Indicates that the vehicle requires maintenance or repairs.
+  MAINTENANCE_REQUIRED = 0;
+  // Specifies that the vehicle is partially functional but may have limited capabilities.
+  PARTLY_OPERATIONAL = 1;
+  // Represents that the vehicle is fully functional and available for use.
+  OPERATIONAL = 2;
+  // Specifies that the vehicle is being transported between locations.
+  IN_TRANSFER = 3;
+  // Indicates that the vehicle is currently located at the supplier's facility.
+  AT_SUPPLIER = 4;
+  // Indicates that the vehicle has been reported as stolen.
+  STOLEN = 5;
+  // Represents that the vehicle is stored and not actively in use.
+  IN_STORAGE = 6;
+}
