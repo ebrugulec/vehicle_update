@@ -1,1 +1,1 @@
-export * from './vehicle_update';
+export * from "./generated/proto/vehicle_update_pb";
