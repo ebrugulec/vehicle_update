@@ -1,6 +1,6 @@
 {
   "name": "vehic-update",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "TypeScript/JavaScript client for vehicle update proto",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
